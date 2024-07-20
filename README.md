@@ -79,7 +79,8 @@ to the following HTML:
 </blockquote>
 ```
 
-Which is *not* compatible with the GitHub's output, because it renders the alert by default as a `<blockquote>` tag and not as a `<div>`.
+>[!IMPORTANT]
+>This output is *not* compatible with GitHub's output, because the alert is rendered as a `<blockquote>` and not as a `<div>`. GitHub will render as a `<div>`!
 
 ### Styling
 
