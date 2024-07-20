@@ -2,6 +2,8 @@
 
 This plugin is forked from [markdown-it-github-alerts](https://github.com/antfu/markdown-it-github-alerts) by Anthony Fu.
 
+My fork is addressing the following issues: In case your content is delivered through a RSS feed (it should), the resulting formatting is not ideal. E.g. there is no space between the icon and the title, the color of the icon does not adapt to the text color, and the rendering as a `div` might not help for reading, a `blockquote` would be better in my view for this case.
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![bundle][bundle-src]][bundle-href]
