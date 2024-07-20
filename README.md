@@ -82,7 +82,7 @@ to the following HTML:
 ```
 
 >[!IMPORTANT]
->This output is *not* identical with GitHub's output, because the alert is rendered as a `<blockquote>` and not as a `<div>`. GitHub will render as a `<div>`!
+>This output is *not* identical with GitHub's output, because the alert is rendered as a `blockquote` and not as a `div`. GitHub will render as a `div`!
 >There is also an `&nbsp;` between the svg icon the marker text, which GitHub wouldn´t render.
 
 ### Styling
