@@ -1,4 +1,6 @@
-# markdown-it-github-alerts
+# markdown-it-rss-friendly-github-alerts
+
+This plugin is forked from [markdown-it-github-alerts](https://github.com/antfu/markdown-it-github-alerts) by Anthony Fu.
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -43,16 +45,16 @@ Support [GitHub-style alerts](https://github.com/orgs/community/discussions/1692
 ## Usage
 
 ```bash
-npm i markdown-it-github-alerts
+npm i markdown-it-rss-friendly-github-alerts
 ```
 
 ```js
 import MarkdownIt from 'markdown-it'
-import MarkdownItGitHubAlerts from 'markdown-it-github-alerts'
+import MarkdownItRSSFriendlyGitHubAlerts from 'markdown-it-rss-friendly-github-alerts'
 
 const md = MarkdownIt()
 
-md.use(MarkdownItGitHubAlerts, /* Options */)
+md.use(MarkdownItRSSFriendlyGitHubAlerts, /* Options */)
 
 const html = md.render(/* ... */)
 ```
@@ -71,13 +73,13 @@ This plugin transforms the following markdown:
 to the following HTML:
 
 ```html
-<div class="markdown-alert markdown-alert-note">
-  <p class="markdown-alert-title" dir="auto"><!-- svg icon-->Note</p><p>
+<blockquote class="markdown-alert markdown-alert-note">
+  <p class="markdown-alert-title" dir="auto"><!-- svg icon-->&nbsp;Note</p><p>
   Highlights information that users should take into account, even when skimming.</p>
-</div>
+</blockquote>
 ```
 
-Which is compatible with the GitHub's output.
+Which is *not* compatible with the GitHub's output, because it renders the alert by default as a `<blockquote>` tag and not as a `<div>`.
 
 ### Styling
 
@@ -86,9 +88,9 @@ You can write your custom styles for your alerts.
 We also provide some CSS extracted from GitHub's styles for you to use.
 
 ```js
-import 'markdown-it-github-alerts/styles/github-colors-light.css'
-import 'markdown-it-github-alerts/styles/github-colors-dark-media.css'
-import 'markdown-it-github-alerts/styles/github-base.css'
+import 'markdown-it-rss-friendly-github-alerts/styles/github-colors-light.css'
+import 'markdown-it-rss-friendly-github-alerts/styles/github-colors-dark-media.css'
+import 'markdown-it-rss-friendly-github-alerts/styles/github-base.css'
 ```
 
 You might change `github-colors-dark-media.css` to `github-colors-dark-class.css` if you are using class-based (`.dark`) dark mode.
@@ -100,7 +102,7 @@ Refer to the [source code](./styles) for more details.
 In order to also support [Obsidian callouts syntax](https://help.obsidian.md/Editing+and+formatting/Callouts) it is possible to allow any type of markers with the following setting:
 
 ```js
-md.use(MarkdownItGitHubAlerts, {
+md.use(MarkdownItRSSFriendlyGitHubAlerts, {
   markers: '*'
 })
 ```
@@ -111,27 +113,19 @@ Alternative titles are also supported, by appending it to the marker like this:
 > The custom title will replace the regular title.
 ```
 
-## Sponsors
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg'/>
-  </a>
-</p>
-
 ## License
 
-[MIT](./LICENSE) License © 2023-PRESENT [Anthony Fu](https://github.com/antfu)
+[MIT](./LICENSE) License
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/markdown-it-github-alerts?style=flat&colorA=080f12&colorB=1fa669
-[npm-version-href]: https://npmjs.com/package/markdown-it-github-alerts
-[npm-downloads-src]: https://img.shields.io/npm/dm/markdown-it-github-alerts?style=flat&colorA=080f12&colorB=1fa669
-[npm-downloads-href]: https://npmjs.com/package/markdown-it-github-alerts
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/markdown-it-github-alerts?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-[bundle-href]: https://bundlephobia.com/result?p=markdown-it-github-alerts
+[npm-version-src]: https://img.shields.io/npm/v/markdown-it-rss-friendly-github-alerts?style=flat&colorA=080f12&colorB=1fa669
+[npm-version-href]: https://npmjs.com/package/markdown-it-rss-friendly-github-alerts
+[npm-downloads-src]: https://img.shields.io/npm/dm/markdown-it-rss-friendly-github-alerts?style=flat&colorA=080f12&colorB=1fa669
+[npm-downloads-href]: https://npmjs.com/package/markdown-it-rss-friendly-github-alerts
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/markdown-it-rss-friendly-github-alerts?style=flat&colorA=080f12&colorB=1fa669&label=minzip
+[bundle-href]: https://bundlephobia.com/result?p=markdown-it-rss-friendly-github-alerts
 [license-src]: https://img.shields.io/github/license/antfu/markdown-it-github-alerts.svg?style=flat&colorA=080f12&colorB=1fa669
 [license-href]: https://github.com/antfu/markdown-it-github-alerts/blob/main/LICENSE
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-[jsdocs-href]: https://www.jsdocs.io/package/markdown-it-github-alerts
+[jsdocs-href]: https://www.jsdocs.io/package/markdown-it-rss-friendly-github-alerts
