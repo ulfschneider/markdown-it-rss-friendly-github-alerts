@@ -2,7 +2,7 @@
 
 This plugin is forked from [markdown-it-github-alerts](https://github.com/antfu/markdown-it-github-alerts) by Anthony Fu.
 
-My fork is addressing the following issues: In case your content is delivered through a RSS feed (it should), the resulting formatting is not ideal. E.g. there is no space between the icon and the title, the color of the icon does not adapt to the text color, and the rendering as a `div` might not help for reading, a `blockquote` would be better in my view for this case.
+My fork is addressing the following issues: In case your content is delivered through a RSS feed (it should) where you do not have control about the styling, the formatting is not ideal. E.g. there is no space between the icon and the title, the color of the icon does not adapt to the text color, and the rendering as a `div` might not help for reading, a `blockquote` would be better in my view for this case.
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -87,9 +87,7 @@ to the following HTML:
 
 ### Styling
 
-You can write your custom styles for your alerts.
-
-We also provide some CSS extracted from GitHub's styles for you to use.
+You can write custom styles for your alerts, and there is some CSS extracted from GitHub's styles for you to use.
 
 ```js
 import 'markdown-it-rss-friendly-github-alerts/styles/github-colors-light.css'
