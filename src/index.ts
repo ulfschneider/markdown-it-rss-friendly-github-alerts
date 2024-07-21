@@ -32,6 +32,12 @@ export interface MarkdownItGitHubAlertsOptions {
    */
   matchCaseSensitive?: boolean
   /**
+   * The styling for the title.
+   * Other than a css class, this styling will be available as an inline style even in the RSS reader.
+   * @default "display: flex; align-items: center;"
+   */
+  titleStyle?: string
+  /**
    * Custom titles for each marker. The key is the marker name, and the value is the title.
    * The key is always lowercase.
    *
@@ -55,6 +61,7 @@ const MarkdownItGitHubAlerts: MarkdownIt.PluginWithOptions<MarkdownItGitHubAlert
     keepBlockquote = true,
     matchCaseSensitive = false,
     titles = {},
+    titleStyle = 'display: flex; align-items: center;',
     classPrefix = 'markdown-alert',
   } = options
 
@@ -95,7 +102,7 @@ const MarkdownItGitHubAlerts: MarkdownIt.PluginWithOptions<MarkdownItGitHubAlert
   })
   md.renderer.rules.alert_open = function (tokens, idx) {
     const { title, type, icon } = tokens[idx].meta
-    return `<${keepBlockquote ? 'blockquote' : 'div'} class="${classPrefix} ${classPrefix}-${type}"><p class="${classPrefix}-title">${icon ? `${icon}&nbsp;` : ''}${title}</p>`
+    return `<${keepBlockquote ? 'blockquote' : 'div'} class="${classPrefix} ${classPrefix}-${type}"><p class="${classPrefix}-title" ${titleStyle ? `style="${titleStyle}"` : ''}>${icon ? `${icon}&nbsp;` : ''}${title}</p>`
   }
 }
 
