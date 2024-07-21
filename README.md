@@ -4,12 +4,6 @@ This plugin is forked from [markdown-it-github-alerts](https://github.com/antfu/
 
 My fork is addressing the following issues: In case your content is delivered through a RSS feed (it should) where you do not have control about the styling, the formatting is not ideal. E.g. there is no space between the icon and the title, the color of the icon does not adapt to the text color, and the rendering as a `div` might not help for reading, a `blockquote` would be better in my view for this case.
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![bundle][bundle-src]][bundle-href]
-[![JSDocs][jsdocs-src]][jsdocs-href]
-[![License][license-src]][license-href]
-
 Support [GitHub-style alerts](https://github.com/orgs/community/discussions/16925) for [markdown-it](https://github.com/markdown-it/markdown-it).
 
 > [!NOTE]
@@ -76,14 +70,15 @@ to the following HTML:
 
 ```html
 <blockquote class="markdown-alert markdown-alert-note">
-  <p class="markdown-alert-title" dir="auto"><!-- svg icon-->&nbsp;Note</p><p>
-  Highlights information that users should take into account, even when skimming.</p>
+  <p class="markdown-alert-title" style="display: flex; align-items: center;">
+    <svg class="octicon octicon-info" fill="currentColor" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>&nbsp;Note</p>
+  <p>Highlights information that users should take into account, even when skimming.</p>
 </blockquote>
 ```
 
 >[!IMPORTANT]
->This output is *not* identical with GitHub's output, because the alert is rendered as a `blockquote` and not as a `div`. GitHub will render as a `div`!
->There is also an `&nbsp;` between the svg icon the marker text, which GitHub wouldn´t render.
+>This output is *not* identical with GitHub's output, because the alert is rendered as a `blockquote` and not as a `div`.
+>There is also an `&nbsp;` between the svg icon the marker text and svg has the setting `fill="currentColor`, which GitHub wouldn´t render.
 
 ### Styling
 
@@ -114,20 +109,3 @@ Alternative titles are also supported, by appending it to the marker like this:
 > [!note] Nota bene
 > The custom title will replace the regular title.
 ```
-
-## License
-
-[MIT](./LICENSE) License
-
-<!-- Badges -->
-
-[npm-version-src]: https://img.shields.io/npm/v/markdown-it-rss-friendly-github-alerts?style=flat&colorA=080f12&colorB=1fa669
-[npm-version-href]: https://npmjs.com/package/markdown-it-rss-friendly-github-alerts
-[npm-downloads-src]: https://img.shields.io/npm/dm/markdown-it-rss-friendly-github-alerts?style=flat&colorA=080f12&colorB=1fa669
-[npm-downloads-href]: https://npmjs.com/package/markdown-it-rss-friendly-github-alerts
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/markdown-it-rss-friendly-github-alerts?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-[bundle-href]: https://bundlephobia.com/result?p=markdown-it-rss-friendly-github-alerts
-[license-src]: https://img.shields.io/github/license/antfu/markdown-it-github-alerts.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/antfu/markdown-it-github-alerts/blob/main/LICENSE
-[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-[jsdocs-href]: https://www.jsdocs.io/package/markdown-it-rss-friendly-github-alerts
